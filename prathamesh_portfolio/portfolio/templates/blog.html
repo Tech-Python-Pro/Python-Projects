@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Blog</h1>
+
+
+
+<h4 class="mt-4">Latest AI/Python Blogs from the Web</h4>
+<div class="mb-3">
+  <label for="sourceFilter" class="form-label">Filter by Source:</label>
+  <select id="sourceFilter" class="form-select w-auto d-inline-block" onchange="filterArticlesBySource()">
+    <option value="">All</option>
+    {% for src in unique_sources %}
+      <option value="{{ src }}">{{ src }}</option>
+    {% endfor %}
+  </select>
+</div>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4" id="external-articles-list">
+    {% for article in latest_articles %}
+    <div class="col external-article" data-source="{{ article.source }}">
+      <div class="card h-100 shadow-sm border-0">
+        {% if article.thumbnail %}
+        <img src="{{ article.thumbnail }}" class="card-img-top" alt="thumbnail" style="object-fit:cover;height:140px;">
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h6 class="card-title mb-2"><a href="{{ article.url }}" target="_blank" class="stretched-link text-decoration-none">{{ article.title }}</a></h6>
+          <div class="mb-2">
+            <span class="badge bg-primary me-1">{{ article.source }}</span>
+            <span class="badge bg-secondary me-1">{{ article.author }}</span>
+            <span class="text-muted small">{{ article.date }}</span>
+          </div>
+          {% if article.summary %}
+          <p class="card-text small">{{ article.summary|truncatewords:30 }}</p>
+          {% endif %}
+          <a href="{{ article.url }}" target="_blank" class="btn btn-outline-primary btn-sm mt-auto">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="text-muted">No latest articles found.</div>
+    {% endfor %}
+</div>
+<script>
+function filterArticlesBySource() {
+  var val = document.getElementById('sourceFilter').value;
+  document.querySelectorAll('.external-article').forEach(function(card) {
+    card.style.display = (!val || card.getAttribute('data-source') === val) ? '' : 'none';
+  });
+}
+</script>
+
+<h4 class="mt-4">My Blog Posts</h4>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for post in posts %}
+    <div class="col">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title mb-2"><a href="/blog/{{ post.slug }}/" class="stretched-link text-decoration-none">{{ post.title }}</a></h5>
+          <small class="text-muted">{{ post.created_at|date:"F j, Y" }}</small>
+          {% if post.content %}
+          <p class="card-text small mt-2">{{ post.content|truncatewords:30 }}</p>
+          {% endif %}
+          <a href="/blog/{{ post.slug }}/" class="btn btn-outline-primary btn-sm mt-auto">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="text-muted">No blog posts yet.</div>
+    {% endfor %}
+</div>
+{% endblock %}

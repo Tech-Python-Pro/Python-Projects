@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row align-items-center my-5">
+    <div class="col-md-4 text-center">
+        <img src="{% static 'images/prathamesh.jpg' %}" class="profile-img-logo" alt="Prathamesh Pandhare">
+    </div>
+    <div class="col-md-8">
+        <h1 class="display-4 fw-bold">Prathamesh Pandhare</h1>
+        <h3 class="text-primary mb-3">Python Developer | AI/ML/DL | Data Science</h3>
+        <p class="lead">Hi, I'm Prathamesh, a Python Developer at Lighthouse Info Systems Pvt. Ltd. in Nagpur, India. I specialize in AI/ML, Data Science, and Python development. Passionate about building intelligent systems and sharing knowledge through projects and blogs.</p>
+        <div class="mb-2">
+            <a href="mailto:prathameshprerna321@gmail.com" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/prathameshpandhare-7b8583255" class="btn btn-outline-primary btn-sm me-2" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="/resume/" class="btn btn-success btn-sm"><i class="bi bi-file-earmark-person"></i> Download Resume</a>
+        </div>
+    </div>
+</div>
+<hr>
+<h2 class="mt-5 mb-3">Experience</h2>
+<ul class="timeline">
+    <li>
+        <span class="timeline-date">Nov 2024 - Present</span>
+        <strong>Lighthouse Info Systems Pvt Ltd</strong> — Python Developer<br>
+        <small>Developed advanced AI solutions like ChatGPT, ChatPDF, and real-time camera systems with ML/DL integration for analytics and monitoring.</small>
+    </li>
+    <li>
+        <span class="timeline-date">May 2024 - Nov 2024</span>
+        <strong>Lighthouse Info Systems Pvt Ltd</strong> — Technical Associate<br>
+        <small>Worked on ERP systems, SQL, PL/SQL, and real-time live projects.</small>
+    </li>
+    <li>
+        <span class="timeline-date">Sep 2022 - May 2024</span>
+        <strong>Cojag</strong> — Jr. Data Scientist<br>
+        <small>Skin Cancer Detection, Brain Tumor Detection, Vehicle Detection, Grape Leaf Disease Detection using ML/DL and computer vision.</small>
+    </li>
+    <li>
+        <span class="timeline-date">Sep 2023 - Oct 2023</span>
+        <strong>Asterisc Technocrat</strong> — Data Science<br>
+        <small>Bitcoin Price Prediction, Instagram Reach Forecasting, Stock Price Prediction, Titanic Survival Prediction.</small>
+    </li>
+</ul>
+<hr>
+<h2 class="mt-5 mb-3">Education</h2>
+<ul class="timeline">
+    <li>
+        <span class="timeline-date">2021 - 2023</span>
+        <strong>VMV Commerce JMT Arts JJP Science College</strong> — MCA, Computer Science (CGPA: 8.7)
+    </li>
+    <li>
+        <span class="timeline-date">2018 - 2021</span>
+        <strong>Prerna Commerce College</strong> — BSc-IT, Web Development
+    </li>
+</ul>
+<hr>
+<h2 class="mt-5 mb-3">Certifications</h2>
+<ul class="list-inline">
+    <li class="list-inline-item badge bg-info text-dark m-1">Remote Sensing and Digital Image Analysis</li>
+    <li class="list-inline-item badge bg-info text-dark m-1">Data Science</li>
+    <li class="list-inline-item badge bg-info text-dark m-1">Project Completion Certificate</li>
+</ul>
+{% endblock %}

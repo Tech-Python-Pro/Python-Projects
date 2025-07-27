@@ -1,0 +1,32 @@
+# Ignore compiled code
+*.o
+*.class
+*.pyc
+
+# Ignore build artifacts
+/build/
+/dist/
+
+# Ignore sensitive files
+.env
+# Ignore log files
+*.log
+
+# Ignore IDE and editor files
+/.venv/
+# Ignore temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+# Ignore coverage reports
+*.coverage
+
+# Ignore documentation build outputs
+/docs/_build/
+# Ignore system files
+Thumbs.db
+.python-version
+uv.lock
+pyproject.toml
+db.sqlite3

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<article class="my-5">
+    <h1>{{ post.title }}</h1>
+    <div class="text-muted mb-3">{{ post.created_at|date:"F j, Y" }}</div>
+    <div class="markdown-body">{{ html_content|safe }}</div>
+</article>
+<a href="/blog/" class="btn btn-secondary">Back to Blog</a>
+{% endblock %}
