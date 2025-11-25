@@ -1,6 +1,0 @@
-django
-markdown
-requests
-python-dotenv
-feedparser
-groq
