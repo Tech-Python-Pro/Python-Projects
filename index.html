@@ -136,8 +136,8 @@
                     <div class="flipperContainer">
                         <div class="flipper">
                             <div class="cardFront cardContainer">
-                                <div class="imgContainer" style="background-image:url('https://images.unsplash.com/photo-1526378729295-2ef2b3f2a7d6?auto=format&fit=crop&w=1200&q=60'); background-position:center; background-size:cover;"></div>
-                                <div class="avatarContainer" style="background-image:url('https://api.dicebear.com/7.x/avataaars/svg?seed=Prathamesh&backgroundColor=00d4ff,0099cc'); background-size:cover;"></div>
+                                <div class="imgContainer" style="background-image:url('python.png'); background-position:center; background-size:cover;"></div>
+                                <div class="avatarContainer" style="background-image:url('lhs-logo.png'); background-size:cover;"></div>
                                 <div class="cardContent">
                                     <div class="titleDiv">
                                         <h1 class="title">Python Developer</h1>
@@ -167,8 +167,8 @@
                     <div class="flipperContainer">
                         <div class="flipper">
                             <div class="cardFront cardContainer">
-                                <div class="imgContainer" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=60'); background-position:center; background-size:cover;"></div>
-                                <div class="avatarContainer" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60'); background-size:cover;"></div>
+                                <div class="imgContainer" style="background-image:url('lhs_erp.png'); background-position:center; background-size:cover;"></div>
+                                <div class="avatarContainer" style="background-image:url('lhs-logo.png'); background-size:cover;"></div>
                                 <div class="cardContent">
                                     <div class="titleDiv">
                                         <h1 class="title">Technical Associate</h1>
@@ -199,7 +199,7 @@
                         <div class="flipper">
                             <div class="cardFront cardContainer">
                                 <div class="imgContainer" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60'); background-position:center; background-size:cover;"></div>
-                                <div class="avatarContainer" style="background-image:url('https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=800&q=60'); background-size:cover;"></div>
+                                <div class="avatarContainer" style="background-image:url('cojag.png'); background-size:cover;"></div>
                                 <div class="cardContent">
                                     <div class="titleDiv">
                                         <h1 class="title">Jr. Data Scientist</h1>
@@ -229,7 +229,7 @@
                         <div class="flipper">
                             <div class="cardFront cardContainer">
                                 <div class="imgContainer" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60'); background-position:center; background-size:cover;"></div>
-                                <div class="avatarContainer" style="background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=60'); background-size:cover;"></div>
+                                <div class="avatarContainer" style="background-image:url('asterisc.png'); background-size:cover;"></div>
                                 <div class="cardContent">
                                     <div class="titleDiv">
                                         <h1 class="title">Data Science Intern</h1>
@@ -610,5 +610,106 @@
         </div>
     </div>
  <script src="app.js"></script>
+
+    <!-- Protection / DevTools deterrent overlay and script (client-side only) -->
+    <div id="devtoolsOverlay" class="hidden" aria-hidden="true">DevTools detected — content hidden.</div>
+
+    <script>
+        (function(){
+            // simple base64-encoded content (not secret) drawn to canvas
+            const encoded = "U2Vuc2l0aXZlIENvbnRlbnQ6IFRoaXMgaXMgYSBzZW5zaXRpdmUgbWVzc2FnZS4gQWx0ZXJuYXRpdmUgc3lzdGVtcyBvciBzZXJ2ZXIgc2lkZSByb2J1c3RpY2F0aW9uIGlzIHJlbGlhYmxlLg==";
+            function decodeBase64(b){ try { return atob(b) } catch(e) { return b } }
+            const text = decodeBase64(encoded);
+
+            // create a canvas element and insert near top of page for demonstration
+            const canvas = document.createElement('canvas');
+            canvas.id = 'protectedCanvas';
+            canvas.width = 900;
+            canvas.height = 220;
+            canvas.setAttribute('aria-label','protected content');
+            const container = document.createElement('div');
+            container.style.maxWidth = '900px';
+            container.style.margin = '18px auto';
+            container.appendChild(canvas);
+            // insert after hero section if present, otherwise at body end
+            const hero = document.getElementById('home');
+            if(hero && hero.parentNode) hero.parentNode.insertBefore(container, hero.nextSibling);
+            else document.body.insertBefore(container, document.body.firstChild);
+
+            const ctx = canvas.getContext('2d');
+            function wrapText(ctx, text, x, y, maxWidth, lineHeight){
+                const words = text.split(' ');
+                let line = '';
+                for (let n=0; n<words.length; n++){
+                    const testLine = line + words[n] + ' ';
+                    const metrics = ctx.measureText(testLine);
+                    const testWidth = metrics.width;
+                    if (testWidth > maxWidth && n > 0){
+                        ctx.fillText(line, x, y);
+                        line = words[n] + ' ';
+                        y += lineHeight;
+                    } else {
+                        line = testLine;
+                    }
+                }
+                ctx.fillText(line, x, y);
+            }
+            function draw(){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                ctx.fillStyle = '#08121a';
+                ctx.fillRect(0,0,canvas.width,canvas.height);
+                ctx.fillStyle = '#aee1ff';
+                ctx.font = '18px system-ui, Arial';
+                wrapText(ctx, text, 18, 36, canvas.width-36, 24);
+            }
+            draw();
+
+            // disable context menu and common shortcuts (discouraging only)
+            document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+            document.addEventListener('keydown', function(e){
+                // F12
+                if(e.keyCode === 123){ e.preventDefault(); return false; }
+                // Ctrl+Shift+I / J
+                if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')){ e.preventDefault(); return false; }
+                // Ctrl+U (view-source) and Ctrl+Shift+C
+                if(e.ctrlKey && (e.key === 'U' || e.key === 'u' || (e.shiftKey && e.key === 'C'))){ e.preventDefault(); return false; }
+            });
+
+            // simple devtools detection and overlay
+            const overlay = document.getElementById('devtoolsOverlay');
+            let devtoolsOpen = false;
+            function detectDevTools(){
+                const threshold = 160;
+                const widthDiff = Math.abs(window.outerWidth - window.innerWidth);
+                const heightDiff = Math.abs(window.outerHeight - window.innerHeight);
+                const isOpen = widthDiff > threshold || heightDiff > threshold;
+                if(isOpen && !devtoolsOpen){
+                    devtoolsOpen = true;
+                    overlay.classList.remove('hidden');
+                    if(container) container.style.display = 'none';
+                } else if(!isOpen && devtoolsOpen){
+                    devtoolsOpen = false;
+                    overlay.classList.add('hidden');
+                    if(container) container.style.display = '';
+                }
+            }
+            setInterval(detectDevTools, 800);
+
+            // prevent copying the canvas content
+            document.addEventListener('copy', function(e){
+                e.clipboardData.setData('text/plain','Content is protected.');
+                e.preventDefault();
+            });
+
+            // small console override to deter casual console use
+            (function(){
+                const originalLog = console.log;
+                console.log = function(){ originalLog.apply(console, arguments); };
+                try{ console.log.toString = function(){ return 'noop' }; } catch(e){}
+            })();
+
+        })();
+    </script>
+
 </body>
 </html>
