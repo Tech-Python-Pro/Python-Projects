@@ -2,6 +2,62 @@
 // Projects Data
 const projectsData = [
     {
+        title: "API Agentic AI Chatbot",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "GenAI",
+        description: "Built a multi-agent AI chatbot that dynamically selects and executes APIs using natural language. Designed LangGraph workflow (Intent → API Selection → Parameter Planning → Execution → Response). Implemented YAML-based scalable API configuration system. Enabled multi-LLM support (OpenAI & Groq). Developed intelligent response synthesis with multi-language support.",
+        tags: ["FastAPI", "LangGraph", "OpenAI", "Groq"]
+    },
+    {
+        title: "Lighthouse App Finder",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "AI/ML",
+        description: "Developed AI-powered enterprise app discovery platform. Enabled natural language search (English, Hindi, Marathi). Built Chrome omnibox extension (lhs + Tab integration). Implemented secure domain filtering for enterprise governance. Reduced internal app search time significantly.",
+        tags: ["FastAPI", "NLP", "Chrome Extension"]
+    },
+    {
+        title: "GPT Builder (Multi-Tenant Custom GPT Platform)",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "GenAI",
+        description: "Built platform for creating custom GPTs from uploaded documents. Implemented vector storage and AI-based document retrieval. Designed multi-tenant architecture with strict data isolation. Developed RBAC authentication & audit logging system. Created admin panel for user and GPT management.",
+        tags: ["FastAPI", "PostgreSQL", "OpenAI", "Embeddings"]
+    },
+    {
+        title: "Lighthouse Document AI (OCR System)",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "Computer Vision",
+        description: "Developed AI-based OCR engine for invoices, bank statements, IDs. Implemented pre-trained templates for higher extraction accuracy. Built structured data output pipeline. Optimized processing speed with template validation.",
+        tags: ["OCR", "AI", "Computer Vision"]
+    },
+    {
+        title: "WeighBridge Camera AI System",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "Computer Vision",
+        description: "Integrated multiple RTSP camera streams. Implemented AI-based image and streaming detection. Built real-time monitoring backend with camera controls. Designed secure logging and configuration management.",
+        tags: ["RTSP", "AI", "Real-time", "Computer Vision"]
+    },
+    {
+        title: "EmailOCR & InboxAI",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "AI/ML",
+        description: "Built automated email-to-OCR data extraction pipeline. Extracted structured data from PDF attachments. Implemented AI-based parsing of unstructured emails. Reduced manual document processing efforts.",
+        tags: ["OCR", "Email Automation", "AI"]
+    },
+    {
+        title: "Google Review Assistant",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "AI/ML",
+        description: "Developed AI-powered review generation system. Integrated QR-based review redirection workflow. Built company management and preview system. Automated reputation management pipeline.",
+        tags: ["AI", "Review Generation", "QR Code"]
+    },
+    {
+        title: "Table GPT (AI CSV Analyst)",
+        company: "Lighthouse Info Systems Pvt Ltd",
+        category: "Data Science",
+        description: "Built AI agent that converts natural language to Python (Pandas) code. Dynamically generates and executes scripts for CSV analysis. Implemented secure execution and file cleanup system. Enabled chat-based data analytics for non-technical users.",
+        tags: ["Python", "Pandas", "Natural Language Processing", "Data Science"]
+    },
+    {
         title: "ChatGPT & ChatPDF Solutions",
         company: "Lighthouse Info Systems Pvt Ltd",
         category: "GenAI",
@@ -35,13 +91,6 @@ const projectsData = [
         category: "Healthcare",
         description: "Built and optimized model for identifying brain tumors through advanced medical imaging techniques",
         tags: ["Healthcare AI", "CNN", "Medical Imaging"]
-    },
-    {
-        title: "Vehicle Detection System",
-        company: "Cojag Smart Technology",
-        category: "Computer Vision",
-        description: "Real-time vehicle detection using computer vision for traffic monitoring and analysis",
-        tags: ["Computer Vision", "Object Detection", "Traffic Analytics"]
     },
     {
         title: "Grape Leaf Disease Detection",
@@ -84,15 +133,8 @@ const projectsData = [
         category: "Computer Vision",
         description: "Python-based emotion detection system using facial recognition and deep learning",
         tags: ["Emotion AI", "Face Recognition", "Deep Learning"]
-    },
-    {
-        title: "Online Admission System",
-        category: "Web Development",
-        description: "24x7 online admission system streamlining application process for students with full-stack implementation",
-        tags: ["Web Development", "Full-Stack", "Python"]
     }
 ];
-
 // Loading Screen
 window.addEventListener('load', function () {
     setTimeout(() => {
@@ -362,3 +404,4 @@ fadeElements.forEach(el => fadeObserver.observe(el));
         });
     });
 })();
+
