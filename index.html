@@ -625,6 +625,7 @@
             canvas.height = 220;
             canvas.setAttribute('aria-label','protected content');
             const container = document.createElement('div');
+            container.id = 'sensitive-message';
             container.style.maxWidth = '900px';
             container.style.margin = '18px auto';
             container.appendChild(canvas);

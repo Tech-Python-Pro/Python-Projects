@@ -1371,3 +1371,8 @@ section {
 @media (max-width: 900px){
     #protectedCanvas{ width:100%; height:auto }
 }
+
+/* Hiding sensitive content message */
+#sensitive-message {
+    display: none !important;
+}
